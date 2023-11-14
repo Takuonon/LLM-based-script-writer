@@ -14,3 +14,34 @@
 詳細はこちらのスライドをご覧下さい。→[SlideShare のリンク](https://www.slideshare.net/TakuoTachibana1/llm-7cb3)
 
 ## コードの簡単な解説
+
+API キーや学習データ/RAG データとして使っている坂井先生の教科書・授業スライドの流出を避けるためデータ類や一部のコードは載せていません。実際に動かすことは基本的にできないと思いますが、なるべくコードは載せているつもりです。
+
+一部 drive のリンクを添付していますが、東大学内メアドのみで閲覧可能です。
+
+### API キーについて
+
+以下の有料 API を使用しています。(コードでは消しているのでこのままでは動きません。)
+
+- google cloud vision api
+- OpenAI api
+
+### 大事な部分の解説
+
+ファイル構成が複雑になっており、かつ整理し切れていない(まとまっていない)ので、重要なプロセスに対応するするファイルを示します。
+
+#### 画像分離(YOLO)
+
+- YOLO の学習データ
+
+  自分で annotate した坂井先生の授業スライドを用いています。 →[drive](https://drive.google.com/drive/folders/1C5eWUI9phhVtZt1MaRNVQxD1j5bEFK3Y?usp=sharing)
+
+- YOLO の訓練
+
+  yolo.ipynb で行いました。訓練済みモデルも上の drive に置いてあります。
+
+- YOLO の実行
+
+  yolo.py で行いました。
+
+#### メインプロセス(スライド要約)
