@@ -13,6 +13,14 @@
 
 詳細はこちらのスライドをご覧下さい。→[SlideShare のリンク](https://www.slideshare.net/TakuoTachibana1/llm-7cb3)
 
+## 使用データ
+
+YOLO の学習データ及び、RAG の取得先データとして以下の教材を使用しました。
+
+- 坂井修一著・電子情報通信学会編「コンピュータアーキテクチャ」(2004 年、コロナ社)
+- 坂井修一著「実践コンピュータアーキテクチャ」(2020 年、コロナ社)
+- 坂井修一著「2023 年度夏学期開講『コンピュータアーキテクチャ』授業スライド」
+
 ## コードの簡単な解説
 
 API キーや学習データ/RAG データとして使っている坂井先生の教科書・授業スライドの流出を避けるためデータ類や一部のコードは載せていません。実際に動かすことは基本的にできないと思いますが、なるべくコードは載せているつもりです。
@@ -60,12 +68,31 @@ API キーや学習データ/RAG データとして使っている坂井先生�
 
 #### 教科書テキスト RAG
 
-- 仮原稿をエンべディングして、ベクトル DB から retrieve
+- ベクトル DB から retrieve
 
   text_rag.py で実行(L ２距離が最も近いものを取ってくる)
 
 - 教科書テキストデータからベクトル DB を作成
 
-  make_taxt_vector_DB.ipynb で実行
+  make_text_vector_DB.ipynb で実行
 
 - 教科書テキストデータ
+
+  テキストデータはこちらです →[ドライブ](https://docs.google.com/spreadsheets/d/1sHJdseAsHr3MiTPXirv_79-2E-GPxKkDgxV67LTplJY/edit?usp=drive_link)
+
+#### 教科書図表 RAG
+
+- 教科書テキストデータからベクトル DB を作成 / ベクトル DB から retrieve
+
+  image_retrieval.ipynb で実行
+
+- 教科書図表データ
+
+  図表とテキストの対応データはこちらです →[ドライブ](https://docs.google.com/spreadsheets/d/19l9d0WhZmB3WDB3Ij5WrJCMjSv0mdRY2cGK4HK1r8m0/edit?usp=drive_link)
+
+#### 最終的な原稿生成
+
+- regenerate_with_text.py
+- regenerate_with_image.py
+
+  の 2 つのステップに分けて、最終的な原稿を生成しました。
